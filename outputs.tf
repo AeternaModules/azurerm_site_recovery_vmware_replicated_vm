@@ -1,3 +1,7 @@
+output "site_recovery_vmware_replicated_vms_id" {
+  description = "Map of id values across all site_recovery_vmware_replicated_vms, keyed the same as var.site_recovery_vmware_replicated_vms"
+  value       = { for k, v in azurerm_site_recovery_vmware_replicated_vm.site_recovery_vmware_replicated_vms : k => v.id }
+}
 output "site_recovery_vmware_replicated_vms_appliance_name" {
   description = "Map of appliance_name values across all site_recovery_vmware_replicated_vms, keyed the same as var.site_recovery_vmware_replicated_vms"
   value       = { for k, v in azurerm_site_recovery_vmware_replicated_vm.site_recovery_vmware_replicated_vms : k => v.appliance_name }
