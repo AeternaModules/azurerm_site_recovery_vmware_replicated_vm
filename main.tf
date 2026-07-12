@@ -23,7 +23,7 @@ resource "azurerm_site_recovery_vmware_replicated_vm" "site_recovery_vmware_repl
   test_network_id                            = each.value.test_network_id
 
   dynamic "managed_disk" {
-    for_each = each.value.managed_disk != null ? [each.value.managed_disk] : []
+    for_each = each.value.managed_disk != null ? each.value.managed_disk : []
     content {
       disk_id                       = managed_disk.value.disk_id
       log_storage_account_id        = managed_disk.value.log_storage_account_id
@@ -33,7 +33,7 @@ resource "azurerm_site_recovery_vmware_replicated_vm" "site_recovery_vmware_repl
   }
 
   dynamic "network_interface" {
-    for_each = each.value.network_interface != null ? [each.value.network_interface] : []
+    for_each = each.value.network_interface != null ? each.value.network_interface : []
     content {
       is_primary         = network_interface.value.is_primary
       source_mac_address = network_interface.value.source_mac_address

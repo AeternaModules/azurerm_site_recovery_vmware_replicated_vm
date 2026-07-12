@@ -57,19 +57,19 @@ EOT
     default_log_storage_account_id             = optional(string)
     multi_vm_group_name                        = optional(string)
     test_network_id                            = optional(string)
-    managed_disk = optional(object({
+    managed_disk = optional(list(object({
       disk_id                       = string
       log_storage_account_id        = optional(string)
       target_disk_encryption_set_id = optional(string)
       target_disk_type              = string
-    }))
-    network_interface = optional(object({
+    })))
+    network_interface = optional(list(object({
       is_primary         = bool
       source_mac_address = string
       target_static_ip   = optional(string)
       target_subnet_name = optional(string)
       test_subnet_name   = optional(string)
-    }))
+    })))
   }))
 }
 
