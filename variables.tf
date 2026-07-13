@@ -51,7 +51,7 @@ EOT
     target_boot_diagnostics_storage_account_id = optional(string)
     target_availability_set_id                 = optional(string)
     default_recovery_disk_type                 = optional(string)
-    license_type                               = optional(string) # Default: "NotSpecified"
+    license_type                               = optional(string)
     default_target_disk_encryption_set_id      = optional(string)
     target_zone                                = optional(string)
     default_log_storage_account_id             = optional(string)
